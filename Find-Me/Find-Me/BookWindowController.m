@@ -14,21 +14,24 @@
 
 @implementation BookWindowController
 
-- (id)initWithWindow:(NSWindow *)window
+-(void) awakeFromNib
 {
-    self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+    [self.datePickerField setDateValue:[NSDate date]];
 }
 
-- (void)windowDidLoad
+-(void) editfromWindow: (HomeWindowController *) sender
 {
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSWindow *window = [self window];
+    [NSApp beginSheet:window modalForWindow:[sender window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	[NSApp runModalForWindow:window];
+	// sheet is up here...
+	[NSApp endSheet:window];
+	[window orderOut:self];
+}
+
+- (IBAction)okClick:(NSButton *)sender
+{
+    [NSApp stopModal];
 }
 
 @end

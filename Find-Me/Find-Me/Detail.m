@@ -9,5 +9,12 @@
 #import "Detail.h"
 
 @implementation Detail
+-(id) init
+{
+    if (self == [super self]) {
+        
+    }
+    return self;
+}
 
 @end

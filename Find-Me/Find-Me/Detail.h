@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Detail : NSObject
-
+@property (copy) NSString * deviceID;
+@property (copy) NSString * emp_name;
+@property (copy) NSString * status;
+@property (copy) NSString * deviceName;
+@property (copy) NSString * bookedEmpName;
 @end

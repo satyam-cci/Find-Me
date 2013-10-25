@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HomeWindowController.h"
 
 @interface BookWindowController : NSWindowController
+@property (strong) IBOutlet NSDatePicker *datePickerField;
 
+-(void) editfromWindow: (HomeWindowController *) sender;
+- (IBAction)okClick:(NSButton *)sender;
 @end

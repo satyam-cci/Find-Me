@@ -13,7 +13,14 @@
 		4AF3819D181A3735006673EF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF3819B181A3735006673EF /* Credits.rtf */; };
 		4AF381A0181A3735006673EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3819F181A3735006673EF /* AppDelegate.m */; };
 		4AF381A3181A3735006673EF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF381A1181A3735006673EF /* MainMenu.xib */; };
-		4AF381A6181A3735006673EF /* Find_Me.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AF381A4181A3735006673EF /* Find_Me.xcdatamodeld */; };
+		BC93E190181A3B8E00439CFC /* HomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC93E18E181A3B8E00439CFC /* HomeWindowController.m */; };
+		BC93E191181A3B8E00439CFC /* HomeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */; };
+		BC93E195181A407100439CFC /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = BC93E194181A407100439CFC /* Detail.m */; };
+		BCB016C7181A475100EBD468 /* BookWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB016C5181A475100EBD468 /* BookWindowController.m */; };
+		BCB016C8181A475100EBD468 /* BookWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB016C6181A475100EBD468 /* BookWindowController.xib */; };
+		BCB016D7181A499700EBD468 /* libJSON-iPhoneSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */; };
+		BCB016D8181A499700EBD468 /* libJSON-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CB181A499700EBD468 /* libJSON-mac.a */; };
+		BCB016D9181A499700EBD468 /* libJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CC181A499700EBD468 /* libJSON.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +37,27 @@
 		4AF3819E181A3735006673EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF3819F181A3735006673EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AF381A2181A3735006673EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4AF381A5181A3735006673EF /* Find_Me.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Find_Me.xcdatamodel; sourceTree = "<group>"; };
+		BC93E18D181A3B8E00439CFC /* HomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWindowController.h; sourceTree = "<group>"; };
+		BC93E18E181A3B8E00439CFC /* HomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWindowController.m; sourceTree = "<group>"; };
+		BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeWindowController.xib; sourceTree = "<group>"; };
+		BC93E193181A407100439CFC /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
+		BC93E194181A407100439CFC /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
+		BCB016C4181A475000EBD468 /* BookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookWindowController.h; sourceTree = "<group>"; };
+		BCB016C5181A475100EBD468 /* BookWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookWindowController.m; sourceTree = "<group>"; };
+		BCB016C6181A475100EBD468 /* BookWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookWindowController.xib; sourceTree = "<group>"; };
+		BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJSON-iPhoneSimulator.a"; sourceTree = "<group>"; };
+		BCB016CB181A499700EBD468 /* libJSON-mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJSON-mac.a"; sourceTree = "<group>"; };
+		BCB016CC181A499700EBD468 /* libJSON.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJSON.a; sourceTree = "<group>"; };
+		BCB016CD181A499700EBD468 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		BCB016CE181A499700EBD468 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		BCB016CF181A499700EBD468 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		BCB016D0181A499700EBD468 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		BCB016D1181A499700EBD468 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		BCB016D2181A499700EBD468 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		BCB016D3181A499700EBD468 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		BCB016D4181A499700EBD468 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		BCB016D5181A499700EBD468 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		BCB016D6181A499700EBD468 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +66,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AF3818D181A3735006673EF /* Cocoa.framework in Frameworks */,
+				BCB016D7181A499700EBD468 /* libJSON-iPhoneSimulator.a in Frameworks */,
+				BCB016D8181A499700EBD468 /* libJSON-mac.a in Frameworks */,
+				BCB016D9181A499700EBD468 /* libJSON.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +117,9 @@
 				4AF3819E181A3735006673EF /* AppDelegate.h */,
 				4AF3819F181A3735006673EF /* AppDelegate.m */,
 				4AF381A1181A3735006673EF /* MainMenu.xib */,
-				4AF381A4181A3735006673EF /* Find_Me.xcdatamodeld */,
+				BCB016C9181A498100EBD468 /* JSON */,
+				BC93E192181A404D00439CFC /* Model */,
+				BC93E18C181A3B5900439CFC /* GUI */,
 				4AF38193181A3735006673EF /* Supporting Files */,
 			);
 			path = "Find-Me";
@@ -103,6 +135,48 @@
 				4AF3819B181A3735006673EF /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC93E18C181A3B5900439CFC /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				BC93E18D181A3B8E00439CFC /* HomeWindowController.h */,
+				BC93E18E181A3B8E00439CFC /* HomeWindowController.m */,
+				BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */,
+				BCB016C4181A475000EBD468 /* BookWindowController.h */,
+				BCB016C5181A475100EBD468 /* BookWindowController.m */,
+				BCB016C6181A475100EBD468 /* BookWindowController.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		BC93E192181A404D00439CFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC93E193181A407100439CFC /* Detail.h */,
+				BC93E194181A407100439CFC /* Detail.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BCB016C9181A498100EBD468 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */,
+				BCB016CB181A499700EBD468 /* libJSON-mac.a */,
+				BCB016CC181A499700EBD468 /* libJSON.a */,
+				BCB016CD181A499700EBD468 /* CDataScanner.h */,
+				BCB016CE181A499700EBD468 /* CJSONDeserializer.h */,
+				BCB016CF181A499700EBD468 /* CJSONScanner.h */,
+				BCB016D0181A499700EBD468 /* JSON.h */,
+				BCB016D1181A499700EBD468 /* NSDictionary_JSONExtensions.h */,
+				BCB016D2181A499700EBD468 /* NSObject+SBJSON.h */,
+				BCB016D3181A499700EBD468 /* NSString+SBJSON.h */,
+				BCB016D4181A499700EBD468 /* SBJsonBase.h */,
+				BCB016D5181A499700EBD468 /* SBJsonParser.h */,
+				BCB016D6181A499700EBD468 /* SBJsonWriter.h */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +233,8 @@
 				4AF38197181A3735006673EF /* InfoPlist.strings in Resources */,
 				4AF3819D181A3735006673EF /* Credits.rtf in Resources */,
 				4AF381A3181A3735006673EF /* MainMenu.xib in Resources */,
+				BC93E191181A3B8E00439CFC /* HomeWindowController.xib in Resources */,
+				BCB016C8181A475100EBD468 /* BookWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +247,9 @@
 			files = (
 				4AF38199181A3735006673EF /* main.m in Sources */,
 				4AF381A0181A3735006673EF /* AppDelegate.m in Sources */,
-				4AF381A6181A3735006673EF /* Find_Me.xcdatamodeld in Sources */,
+				BC93E190181A3B8E00439CFC /* HomeWindowController.m in Sources */,
+				BC93E195181A407100439CFC /* Detail.m in Sources */,
+				BCB016C7181A475100EBD468 /* BookWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +349,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Find-Me/Find-Me-Prefix.pch";
 				INFOPLIST_FILE = "Find-Me/Find-Me-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Find-Me\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -283,6 +365,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Find-Me/Find-Me-Prefix.pch";
 				INFOPLIST_FILE = "Find-Me/Find-Me-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Find-Me\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -307,21 +393,9 @@
 				4AF381AB181A3735006673EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4AF381A4181A3735006673EF /* Find_Me.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4AF381A5181A3735006673EF /* Find_Me.xcdatamodel */,
-			);
-			currentVersion = 4AF381A5181A3735006673EF /* Find_Me.xcdatamodel */;
-			path = Find_Me.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4AF38181181A3735006673EF /* Project object */;
 }

@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "JSON.h"
 
-@interface HomeWindowController : NSWindowController
+@interface HomeWindowController : NSWindowController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@property (strong) IBOutlet NSTableView *tableView;
+@property (strong) IBOutlet NSArrayController *arrayController;
 
 @end
