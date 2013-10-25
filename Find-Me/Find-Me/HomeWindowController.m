@@ -7,9 +7,9 @@
 //
 
 #import "HomeWindowController.h"
-#import "BookWindowController.h"
 #import "Detail.h"
 #import "Common.h"
+#import "BonsokViewController.h"
 
 #define kKeyListDeviceId			@"device_id"
 #define kKeyListDeviceName			@"device_name"
@@ -20,13 +20,14 @@
 #define kLan @"en0"
 #define kWifi @"en1"
 
-@interface HomeWindowController ()
+@interface HomeWindowController ()<BonsokViewControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *objects;
-@property (nonatomic,strong) BookWindowController *bookWindowController;
+@property (nonatomic,strong) BonsokViewController *bookWindowController;
 @property (strong) IBOutlet NSTextField *deviceID;
 @property (strong) IBOutlet NSTextField *deviceName;
 @property (strong) IBOutlet NSTextField *empName;
 @property (strong) IBOutlet NSButton *logOutBtn;
+@property (strong) IBOutlet NSTextField *deviceBookedBy;
 
 @property (strong) IBOutlet NSView *customView;
 @property (strong) NSString *mac_id;
@@ -44,11 +45,12 @@
     self.objects = [[NSMutableArray alloc] init];
    // [self getData];
     [self getDeviceList];
-    self.bookWindowController = [[BookWindowController alloc] initWithWindowNibName:@"BookWindowController"];
-	
+    self.bookWindowController = [[BonsokViewController alloc] initWithNibName:@"BonsokViewController" bundle:nil];
+	self.bookWindowController.bonsokViewControllerDelegate = self;
 	Common *common = [[Common alloc] init];
 	
 	self.mac_id = [common getMacAddress:kLan];
+	self.bookWindowController.macId = self.mac_id;
 	NSLog(@"Mac adresss %@",self.mac_id);
 }
 
@@ -56,6 +58,8 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
     [self.customView setHidden:NO];
+	
+	[self.responseLabel setStringValue:@""];
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow >= 0 && self.objects.count > selectedRow) {
         Detail * detail = [[Detail alloc] init];
@@ -64,6 +68,7 @@
         [self.deviceName setStringValue:detail.deviceName];
         [self.empName setStringValue:detail.emp_name];
 		
+		[self.deviceBookedBy setStringValue:detail.bookedEmpName];
 		
 		if([detail.emp_name isEqualToString:@""])
 		{
@@ -106,22 +111,26 @@
 //		}
 //		else
 		
-		if(![detail.emp_name isEqualToString:@""])
+		
+		 if(![detail.bookedEmpName isEqualToString:@""])
+		{
+		detail.status = @"BOOKED";
+		}
+		
+		  if(![detail.emp_name isEqualToString:@""])
 		{
 			detail.status = @"BEING USED";
-		}
-		else if(![detail.bookedEmpName isEqualToString:@""])
-		{
-			detail.status = @"BOOKED";
 		}
 
 		[self.objects addObject:detail];
 		[self.arrayController addObject:detail];
+		self.bookWindowController.deviceId =detail.deviceID;
 	}
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{}
+{
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
@@ -158,13 +167,33 @@
 
 - (IBAction)bookClick:(NSButton *)sender
 {
-    [self.bookWindowController editfromWindow:self];
+	
+	NSPopover *popover = [[NSPopover alloc] init];
+	[popover setContentSize:NSMakeSize(200.0f, 100.0f)];
+	[popover setContentViewController:self.bookWindowController];
+	[popover setAnimates:YES];
+	popover.behavior = NSPopoverBehaviorTransient;
+	[popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxXEdge];
 }
 
 - (IBAction)logoutClick:(NSButton *)sender
 {
     [self sendDeviceDetails];
 }
-
+-(void)bookedStatus:(NSString *)status{
+ 
+	NSString * resultantResponse;
+	if ([status isEqualToString:@"BOOKINGEXIST"]) {
+		//
+		resultantResponse = @"Booking already exists on this date";
+		
+	}
+	else{
+		//
+		resultantResponse = @"Booked";
+	}
+	[self.responseLabel setStringValue:resultantResponse];
+	
+ }
 
 @end

@@ -13,11 +13,12 @@
 		4AF3819D181A3735006673EF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF3819B181A3735006673EF /* Credits.rtf */; };
 		4AF381A0181A3735006673EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3819F181A3735006673EF /* AppDelegate.m */; };
 		4AF381A3181A3735006673EF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF381A1181A3735006673EF /* MainMenu.xib */; };
+		4AF381B6181A79A4006673EF /* BonsokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF381B4181A79A4006673EF /* BonsokViewController.m */; };
+		4AF381B7181A79A4006673EF /* BonsokViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF381B5181A79A4006673EF /* BonsokViewController.xib */; };
+		4AF381BA181A8033006673EF /* BookResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF381B9181A8033006673EF /* BookResponse.m */; };
 		BC93E190181A3B8E00439CFC /* HomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC93E18E181A3B8E00439CFC /* HomeWindowController.m */; };
 		BC93E191181A3B8E00439CFC /* HomeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */; };
 		BC93E195181A407100439CFC /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = BC93E194181A407100439CFC /* Detail.m */; };
-		BCB016C7181A475100EBD468 /* BookWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB016C5181A475100EBD468 /* BookWindowController.m */; };
-		BCB016C8181A475100EBD468 /* BookWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB016C6181A475100EBD468 /* BookWindowController.xib */; };
 		BCB016D7181A499700EBD468 /* libJSON-iPhoneSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */; };
 		BCB016D8181A499700EBD468 /* libJSON-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CB181A499700EBD468 /* libJSON-mac.a */; };
 		BCB016D9181A499700EBD468 /* libJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CC181A499700EBD468 /* libJSON.a */; };
@@ -38,14 +39,16 @@
 		4AF3819E181A3735006673EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF3819F181A3735006673EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AF381A2181A3735006673EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4AF381B3181A79A4006673EF /* BonsokViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonsokViewController.h; sourceTree = "<group>"; };
+		4AF381B4181A79A4006673EF /* BonsokViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonsokViewController.m; sourceTree = "<group>"; };
+		4AF381B5181A79A4006673EF /* BonsokViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonsokViewController.xib; sourceTree = "<group>"; };
+		4AF381B8181A8033006673EF /* BookResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookResponse.h; sourceTree = "<group>"; };
+		4AF381B9181A8033006673EF /* BookResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookResponse.m; sourceTree = "<group>"; };
 		BC93E18D181A3B8E00439CFC /* HomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWindowController.h; sourceTree = "<group>"; };
 		BC93E18E181A3B8E00439CFC /* HomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWindowController.m; sourceTree = "<group>"; };
 		BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeWindowController.xib; sourceTree = "<group>"; };
 		BC93E193181A407100439CFC /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
 		BC93E194181A407100439CFC /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
-		BCB016C4181A475000EBD468 /* BookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookWindowController.h; sourceTree = "<group>"; };
-		BCB016C5181A475100EBD468 /* BookWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookWindowController.m; sourceTree = "<group>"; };
-		BCB016C6181A475100EBD468 /* BookWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookWindowController.xib; sourceTree = "<group>"; };
 		BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJSON-iPhoneSimulator.a"; sourceTree = "<group>"; };
 		BCB016CB181A499700EBD468 /* libJSON-mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJSON-mac.a"; sourceTree = "<group>"; };
 		BCB016CC181A499700EBD468 /* libJSON.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJSON.a; sourceTree = "<group>"; };
@@ -146,9 +149,9 @@
 				BC93E18D181A3B8E00439CFC /* HomeWindowController.h */,
 				BC93E18E181A3B8E00439CFC /* HomeWindowController.m */,
 				BC93E18F181A3B8E00439CFC /* HomeWindowController.xib */,
-				BCB016C4181A475000EBD468 /* BookWindowController.h */,
-				BCB016C5181A475100EBD468 /* BookWindowController.m */,
-				BCB016C6181A475100EBD468 /* BookWindowController.xib */,
+				4AF381B3181A79A4006673EF /* BonsokViewController.h */,
+				4AF381B4181A79A4006673EF /* BonsokViewController.m */,
+				4AF381B5181A79A4006673EF /* BonsokViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -160,6 +163,8 @@
 				CB23BA1F181A5F4900EB6744 /* Common.m */,
 				BC93E193181A407100439CFC /* Detail.h */,
 				BC93E194181A407100439CFC /* Detail.m */,
+				4AF381B8181A8033006673EF /* BookResponse.h */,
+				4AF381B9181A8033006673EF /* BookResponse.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -239,7 +244,7 @@
 				4AF3819D181A3735006673EF /* Credits.rtf in Resources */,
 				4AF381A3181A3735006673EF /* MainMenu.xib in Resources */,
 				BC93E191181A3B8E00439CFC /* HomeWindowController.xib in Resources */,
-				BCB016C8181A475100EBD468 /* BookWindowController.xib in Resources */,
+				4AF381B7181A79A4006673EF /* BonsokViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +259,9 @@
 				4AF381A0181A3735006673EF /* AppDelegate.m in Sources */,
 				BC93E190181A3B8E00439CFC /* HomeWindowController.m in Sources */,
 				BC93E195181A407100439CFC /* Detail.m in Sources */,
-				BCB016C7181A475100EBD468 /* BookWindowController.m in Sources */,
 				CB23BA20181A5F4900EB6744 /* Common.m in Sources */,
+				4AF381B6181A79A4006673EF /* BonsokViewController.m in Sources */,
+				4AF381BA181A8033006673EF /* BookResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
