@@ -21,6 +21,7 @@
 		BCB016D7181A499700EBD468 /* libJSON-iPhoneSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CA181A499700EBD468 /* libJSON-iPhoneSimulator.a */; };
 		BCB016D8181A499700EBD468 /* libJSON-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CB181A499700EBD468 /* libJSON-mac.a */; };
 		BCB016D9181A499700EBD468 /* libJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB016CC181A499700EBD468 /* libJSON.a */; };
+		CB23BA20181A5F4900EB6744 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = CB23BA1F181A5F4900EB6744 /* Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		BCB016D4181A499700EBD468 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		BCB016D5181A499700EBD468 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		BCB016D6181A499700EBD468 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		CB23BA1E181A5F4900EB6744 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CB23BA1F181A5F4900EB6744 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 		BC93E192181A404D00439CFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB23BA1E181A5F4900EB6744 /* Common.h */,
+				CB23BA1F181A5F4900EB6744 /* Common.m */,
 				BC93E193181A407100439CFC /* Detail.h */,
 				BC93E194181A407100439CFC /* Detail.m */,
 			);
@@ -250,6 +255,7 @@
 				BC93E190181A3B8E00439CFC /* HomeWindowController.m in Sources */,
 				BC93E195181A407100439CFC /* Detail.m in Sources */,
 				BCB016C7181A475100EBD468 /* BookWindowController.m in Sources */,
+				CB23BA20181A5F4900EB6744 /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

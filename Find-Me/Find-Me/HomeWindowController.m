@@ -9,6 +9,7 @@
 #import "HomeWindowController.h"
 #import "BookWindowController.h"
 #import "Detail.h"
+#import "Common.h"
 
 #define kKeyListDeviceId			@"device_id"
 #define kKeyListDeviceName			@"device_name"
@@ -21,6 +22,7 @@
 @property (strong) IBOutlet NSTextField *deviceID;
 @property (strong) IBOutlet NSTextField *deviceName;
 @property (strong) IBOutlet NSTextField *empName;
+@property (strong) IBOutlet NSButton *logOutBtn;
 
 @property (strong) IBOutlet NSView *customView;
 
@@ -38,34 +40,10 @@
    // [self getData];
     [self getDeviceList];
     self.bookWindowController = [[BookWindowController alloc] initWithWindowNibName:@"BookWindowController"];
+	
+	Common *common = [[Common alloc] init];
 }
 
--(void) getData
-{
-    NSMutableDictionary * dict1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1", @"status",
-                                   @"111" , @"deviceID",
-                                   @"Ankita" , @"emp_name",
-                                    nil];
-    
-    NSMutableDictionary * dict2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1", @"status",
-                                   @"222" , @"deviceID",
-                                   @"Smith" , @"emp_name",
-                                   nil];
-    
-    [self.arrayController addObject:dict1];
-    [self.arrayController addObject:dict2];
-    
-    for (NSMutableDictionary *dict in self.arrayController.arrangedObjects) {
-        Detail *detail = [[Detail alloc] init];
-        detail.status = [dict objectForKey:@"status"];
-        detail.deviceID = [dict objectForKey:@"deviceID"];
-        detail.emp_name = [dict objectForKey:@"emp_name"];
-        
-        [self.objects addObject:detail];
-    }
-}
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
@@ -77,6 +55,16 @@
         [self.deviceID setStringValue:detail.deviceID];
         [self.deviceName setStringValue:detail.deviceName];
         [self.empName setStringValue:detail.emp_name];
+		
+		
+		if([detail.emp_name isEqualToString:@""])
+		{
+			[self.logOutBtn setHidden:YES];
+		}
+		else
+		{
+			[self.logOutBtn setHidden:NO];
+		}
     }
 }
 
@@ -136,4 +124,6 @@
 - (IBAction)logoutClick:(NSButton *)sender
 {
 }
+
+
 @end
