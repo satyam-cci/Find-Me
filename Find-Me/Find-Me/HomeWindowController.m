@@ -18,9 +18,9 @@
 @interface HomeWindowController ()
 @property (nonatomic,strong) NSMutableArray *objects;
 @property (nonatomic,strong) BookWindowController *bookWindowController;
-@property (strong) IBOutlet NSTextField *nameLabel;
-@property (strong) IBOutlet NSTextField *cubicalLabel;
-@property (strong) IBOutlet NSTextField *sectionLabel;
+@property (strong) IBOutlet NSTextField *deviceID;
+@property (strong) IBOutlet NSTextField *deviceName;
+@property (strong) IBOutlet NSTextField *empName;
 
 @property (strong) IBOutlet NSView *customView;
 
@@ -74,7 +74,9 @@
     if (selectedRow >= 0 && self.objects.count > selectedRow) {
         Detail * detail = [[Detail alloc] init];
         detail = [self.objects objectAtIndex:selectedRow];
-        [self.nameLabel setStringValue:detail.emp_name];
+        [self.deviceID setStringValue:detail.deviceID];
+        [self.deviceName setStringValue:detail.deviceName];
+        [self.empName setStringValue:detail.emp_name];
     }
 }
 
@@ -96,9 +98,9 @@
         
 		detail.deviceID = [dict objectForKey:kKeyListDeviceId];
 		detail.deviceName = [dict objectForKey:kKeyListDeviceName];
-		detail.emp_name = [dict objectForKey:kKeyListEmployeeName];
 		detail.bookedEmpName = [dict objectForKey:kKeyListBookedEmployeeName];
-		
+        detail.emp_name = [dict objectForKey:kKeyListEmployeeName];
+
 		[self.objects addObject:detail];
 		[self.arrayController addObject:detail];
 	}
