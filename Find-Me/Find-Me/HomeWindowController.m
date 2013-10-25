@@ -28,7 +28,7 @@
 @property (strong) IBOutlet NSTextField *empName;
 @property (strong) IBOutlet NSButton *logOutBtn;
 @property (strong) IBOutlet NSTextField *deviceBookedBy;
-
+@property (strong) NSURLConnection *logoutconnection;
 @property (strong) IBOutlet NSView *customView;
 @property (strong) NSString *mac_id;
 
@@ -78,6 +78,11 @@
 		{
 			[self.logOutBtn setHidden:NO];
 		}
+        
+        if (self.bookWindowController) {
+            self.bookWindowController.deviceId = detail.deviceID;
+        }
+        
     }
 }
 
@@ -130,14 +135,22 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    if (connection == self.logoutconnection) {
+        [self getDeviceList];
+        
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    
+ 
 	NSError *error;
 	//NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 	[self processJson:result];
+    
+   
     
 }
 
@@ -152,7 +165,7 @@
     
     NSURL *url = [[NSURL alloc] initWithString:stringWithURL];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	self.logoutconnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
 }
 
@@ -172,19 +185,20 @@
 	[popover setContentSize:NSMakeSize(200.0f, 100.0f)];
 	[popover setContentViewController:self.bookWindowController];
 	[popover setAnimates:YES];
-	popover.behavior = NSPopoverBehaviorTransient;
+	 popover.behavior = NSPopoverBehaviorTransient;
 	[popover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxXEdge];
 }
 
 - (IBAction)logoutClick:(NSButton *)sender
 {
     [self sendDeviceDetails];
-	[self getDeviceList];
+    
+    
 }
 -(void)bookedStatus:(NSString *)status{
  
 	NSString * resultantResponse;
-	if ([status isEqualToString:@"BOOKINGEXIST"]) {
+	if ([status isEqualToString:@"BOOKINGEXISTS"]) {
 		//
 		resultantResponse = @"Booking already exists on this date";
 		
