@@ -2,4 +2,19 @@
 <Bucket
    type = "1"
    version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Find-Me/HomeWindowController.m"
+         timestampString = "404382807.049986"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "131"
+         endingLineNumber = "131"
+         landmarkName = "@implementation HomeWindowController"
+         landmarkType = "3">
+      </FileBreakpoint>
+   </FileBreakpoints>
 </Bucket>

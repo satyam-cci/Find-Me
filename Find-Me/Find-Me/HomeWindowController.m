@@ -68,7 +68,7 @@
     }
 }
 
-# pragma mark - process webservice
+# pragma mark - process webservice get
 - (void) getDeviceList
 {
 	NSURL *url = [[NSURL alloc] initWithString:@"http://findme.hackaton.ccigoa/findMe.php?funcName=getDeviceList"];
@@ -103,17 +103,31 @@
 	//NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 	[self processJson:result];
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {}
 
+# pragma mark - process webservice Logout
+-(void) sendDeviceDetails
+{
+    NSString * stringWithURL = [NSString stringWithFormat:@"http://findme.hackaton.ccigoa/findMe.php?funcName=logoutDeviceUser&device_id="];
+    stringWithURL = [stringWithURL stringByAppendingString:self.deviceID.stringValue];
+    
+    NSURL *url = [[NSURL alloc] initWithString:stringWithURL];
+	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+}
 
 
 # pragma mark - Button Clicks
 - (IBAction)refreshClick:(NSButton *)sender
 {
     [self.customView setHidden:YES];
+    
+    [self getDeviceList];
 }
 
 - (IBAction)bookClick:(NSButton *)sender
@@ -123,6 +137,7 @@
 
 - (IBAction)logoutClick:(NSButton *)sender
 {
+    [self sendDeviceDetails];
 }
 
 
