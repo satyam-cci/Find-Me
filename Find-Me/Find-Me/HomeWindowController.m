@@ -179,6 +179,7 @@
 - (IBAction)logoutClick:(NSButton *)sender
 {
     [self sendDeviceDetails];
+	[self getDeviceList];
 }
 -(void)bookedStatus:(NSString *)status{
  
