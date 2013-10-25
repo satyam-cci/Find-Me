@@ -16,6 +16,10 @@
 #define kKeyListEmployeeName		@"emp_name"
 #define kKeyListBookedEmployeeName	@"booked_emp_name"
 
+
+#define kLan @"en0"
+#define kWifi @"en1"
+
 @interface HomeWindowController ()
 @property (nonatomic,strong) NSMutableArray *objects;
 @property (nonatomic,strong) BookWindowController *bookWindowController;
@@ -25,6 +29,7 @@
 @property (strong) IBOutlet NSButton *logOutBtn;
 
 @property (strong) IBOutlet NSView *customView;
+@property (strong) NSString *mac_id;
 
 - (IBAction)refreshClick:(NSButton *)sender;
 - (IBAction)bookClick:(NSButton *)sender;
@@ -42,6 +47,9 @@
     self.bookWindowController = [[BookWindowController alloc] initWithWindowNibName:@"BookWindowController"];
 	
 	Common *common = [[Common alloc] init];
+	
+	self.mac_id = [common getMacAddress:kLan];
+	NSLog(@"Mac adresss %@",self.mac_id);
 }
 
 
@@ -78,7 +86,9 @@
 
 - (void) processJson:(NSArray *)resultArray
 {
-	[self.objects removeAllObjects];
+
+	[self.arrayController removeObjects:self.objects];
+		[self.objects removeAllObjects];
 	
 	for(NSDictionary *dict in resultArray)
 	{
@@ -88,6 +98,22 @@
 		detail.deviceName = [dict objectForKey:kKeyListDeviceName];
 		detail.bookedEmpName = [dict objectForKey:kKeyListBookedEmployeeName];
         detail.emp_name = [dict objectForKey:kKeyListEmployeeName];
+		detail.status = @"AVAILABLE";
+		
+//		if([detail.emp_name isEqualToString:@""])
+//		{
+//			detail.status = @"AVAILABLE";
+//		}
+//		else
+		
+		if(![detail.emp_name isEqualToString:@""])
+		{
+			detail.status = @"BEING USED";
+		}
+		else if(![detail.bookedEmpName isEqualToString:@""])
+		{
+			detail.status = @"BOOKED";
+		}
 
 		[self.objects addObject:detail];
 		[self.arrayController addObject:detail];
@@ -125,9 +151,9 @@
 # pragma mark - Button Clicks
 - (IBAction)refreshClick:(NSButton *)sender
 {
-    [self.customView setHidden:YES];
-    
+    [self.customView setHidden:YES];    
     [self getDeviceList];
+
 }
 
 - (IBAction)bookClick:(NSButton *)sender
